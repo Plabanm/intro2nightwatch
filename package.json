@@ -1,7 +1,7 @@
 {
   "name": "intro2nightwatch",
   "version": "1.0.0",
-  "description": "QDooz App",
+  "description": "intro2nightwatch",
   "main": "index.js",
   "scripts": {
     "test": "nightwatch",
