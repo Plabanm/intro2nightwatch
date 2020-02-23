@@ -1,5 +1,8 @@
 module.exports = {
-    elements: {
+  url: function () {
+    return this.api.launchUrl;
+  },  
+  elements: {
       searchBox: '[data-test="search-input"]',
       submitButton: '[data-test="search-button"]'
     },

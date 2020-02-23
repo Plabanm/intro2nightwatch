@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nightwatch",
-    "test:vrt": "nightwatch -c nightwatch.vrt.conf.js",
+    "test-vrt": "nightwatch -c nightwatch.vrt.conf.js",
     "consolidate:vrt": "CONSOLIDATE=1 nightwatch -c nightwatch.vrt.conf.js",
     "test-cucumber": "mkdirp report && cucumber-js --require cucumber.conf.js --require step-definitions --format node_modules/cucumber-pretty --format json:report/cucumber_report.json"
   },
