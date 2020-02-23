@@ -1,7 +1,7 @@
-Feature: Google Search
+Feature: Search for a product 
 
-Scenario: Searching Google
+Scenario: search for a product
 
-  Given I open Google's search page
-  Then the title is "Google"
-  And the Google search form exists
+  Given I on argos home page
+  Then I search for  "toy"
+  And I should see toy search results 

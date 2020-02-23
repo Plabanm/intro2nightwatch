@@ -1,14 +1,25 @@
 const { client } = require('nightwatch-api');
 const { Given, Then, When } = require('cucumber');
 
-Given(/^I open Google's search page$/, () => {
-  return client.url('http://google.com').waitForElementVisible('body', 1000);
+const home = client.page.homePage()
+const result = client.page.resultPage()
+ 
+
+Given(/^I on argos home page$/, function() {
+  return client.url('https://www.argos.co.uk/')
 });
 
-Then(/^the title is "([^"]*)"$/, title => {
-  return client.assert.title(title);
+When(/^I search for  "([^"]*)"$/, function(term) {
+  return home
+    .pause(2000)
+    .setSearchKeyWord(term)
+    .submitSearch()
 });
 
-Then(/^the Google search form exists$/, () => {
-  return client.assert.visible('input[name="q"]');
+Then(/^I should see toy search results$/, function() {
+  return result
+    .waitForElementVisible('@searchTermResult')
+    .assert.containsText('@searchTermResult', 'toy')
+
 });
+     

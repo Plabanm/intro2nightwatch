@@ -28,7 +28,7 @@ module.exports = {
 
       screenshots: {
         enabled: true,
-        path: 'screens',
+        path: 'screenshots',
         on_failure: true,
         on_error: true
       },
@@ -73,7 +73,7 @@ module.exports = {
       },
       webdriver: {
         start_process: true,
-        port: 4444,
+        port: 8080,
         server_path: (Services.geckodriver ? Services.geckodriver.path : ''),
         cli_args: [
           // very verbose geckodriver logs
